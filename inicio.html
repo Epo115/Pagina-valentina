@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inicio - Valentina Trejo García</title>
+  <style>
+    /* Estilo general */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(rgba(248, 229, 255, 0.5), rgba(231, 76, 60, 0.2)),
+                  url('fondo vale.jpg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .header {
+      position: relative;
+      text-align: center;
+      padding: 60px 20px 100px;
+      margin: 20px 0 60px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 15px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(5px);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('fondo vale.jpg') center center/cover;
+      z-index: -1;
+      filter: blur(2px) brightness(0.7);
+    }
+
+    h1 {
+      font-family: 'Georgia', serif;
+      font-size: 3.2em;
+      color: white;
+      margin: 0;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+      letter-spacing: 1px;
+    }
+
+    .intro-text {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1.2em;
+      color: white;
+      margin-top: 20px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-biografia {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 15px 30px;
+      background-color: #e74c3c;
+      color: white;
+      text-decoration: none;
+      font-size: 1.1em;
+      font-weight: bold;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .btn-biografia:hover {
+      background-color: #c0392b;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Encabezado -->
+    <div class="header">
+      <h1>Bienvenidos a mi historia</h1>
+      <p class="intro-text">
+        Hola, soy Valentina Trejo García. Haz clic abajo para conocer más sobre mí, mis sueños y mis inspiraciones.
+      </p>
+      <a href="vale.html" class="btn-biografia">Ver mi Biografía</a>
+    </div>
+  </div>
+</body>
+</html>

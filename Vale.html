@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biografía de Valentina</title>
+  <style>
+    /* Estilo general */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(rgba(248, 229, 255, 0.5), rgba(231, 76, 60, 0.2)), 
+                  url('fondo vale.jpg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+      color: #333;
+    }
+
+    /* Contenedor principal */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Sección del encabezado */
+    .header {
+      position: relative;
+      text-align: center;
+      padding: 60px 20px 120px;
+      margin: 20px 0 60px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 15px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(5px);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('fondo vale.jpg') center center/cover;
+      z-index: -1;
+      filter: blur(2px) brightness(0.7);
+    }
+
+    /* Nombre principal */
+    h1 {
+      font-family: 'Georgia', serif;
+      font-size: 3.2em;
+      color: white;
+      margin: 0;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+      letter-spacing: 1px;
+    }
+
+    /* Contenido principal */
+    .content {
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 15px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      margin: 30px auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .content:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Títulos de sección */
+    h2 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.8em;
+      color: #e74c3c;
+      margin: 0 0 15px 0;
+      text-align: center;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    h2::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(to right, #e74c3c, #f8e5ff);
+      border-radius: 3px;
+    }
+
+    /* Parrafos */
+    p {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1.1em;
+      line-height: 1.7;
+      color: #333;
+      text-align: justify;
+      max-width: 700px;
+    }
+
+    /* Galería de imágenes */
+    .image-gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .profile-image {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      border: 4px solid white;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .profile-image:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Imagen de perfil en el encabezado */
+    .header-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 5px solid white;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      margin: 0 auto;
+    }
+
+    /* Control de música */
+    .music-controls {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .music-controls:hover {
+      transform: scale(1.1);
+      background: rgba(231, 76, 60, 0.9);
+    }
+
+    .music-controls i {
+      font-size: 28px;
+      color: #e74c3c;
+    }
+
+    .music-controls:hover i {
+      color: white;
+    }
+
+    /* Pie de página */
+    .footer {
+      text-align: center;
+      padding: 20px;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.9em;
+      margin-top: 20px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+      backdrop-filter: blur(5px);
+    }
+
+    /* Etiqueta para las imágenes */
+    .image-label {
+      text-align: center;
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 5px;
+      font-style: italic;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.3em;
+      }
+      
+      .header {
+        padding: 40px 15px 100px;
+      }
+      
+      .content {
+        padding: 20px;
+      }
+      
+      p {
+        font-size: 1em;
+      }
+      
+      .profile-image {
+        width: 140px;
+        height: 140px;
+      }
+      
+      .header-image {
+        width: 160px;
+        height: 160px;
+      }
+      
+      .image-gallery {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">      
+</head>
+<body>
+  <!-- Control de música -->
+  <div class="music-controls" id="musicControl">
+    <i class="fas fa-music"></i>
+  </div>
+  
+  <!-- Contenedor principal -->
+  <div class="container">
+    <!-- Encabezado -->
+    <div class="header">
+      <h1>Valentina Trejo García</h1>
+      <img src="vale.jpg" alt="Foto de Valentina" class="header-image">
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="content">
+      <div>
+        <h2>¿Quién soy?</h2>
+        <p>Soy Valentina Trejo García, tengo 18 años y soy estudiante de la preparatoria número 115. Tengo un certificado de Cambridge desde que tengo 11 años. Me gusta mucho leer, escuchar música y ver películas. También tengo habilidades para la cocina, el arte y la escultura. Me encanta cantar porque es mi forma de liberar emociones. Mis metas futuras aún no están claras, pero espero ejercer como auxiliar de vuelo o piloto aviador.</p>
+        
+        <!-- Galería con las tres imágenes -->
+        <div class="image-gallery">
+          <div>
+            <img src="val.jpg" alt="Val" class="profile-image">
+            <div class="image-label">De pequeña</div>
+          </div>
+          <div>
+            <img src="vale.jpg" alt="Valentina" class="profile-image">
+            <div class="image-label">Mi foto favorita</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div>
+        <h2>Mis inspiraciones</h2>
+        <p>Mi mayor inspiración es mi papá, el hombre que me ha acompañado durante mis 18 años de vida. Me ha visto crecer, transformarme y luchar contra cualquier obstáculo. Siempre está ahí para apoyarme con consejos profundos y acertados. Platicar con él es el mejor regalo que obtengo cada noche. ¡Gracias, papá!</p>
+        <img src="papa val.jpg" alt="Foto de papá" class="profile-image">
+        <div class="image-label">Mi papá, mi héroe</div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <p>Con cariño, Valentina Trejo García - 2025</p>
+    </div>
+  </div>
+
+  <!-- Audio para música de fondo -->
+  <audio id="backgroundMusic" loop>
+    <!-- Reemplaza con tu archivo de música -->
+    <source src="tu_musica_de_fondo.mp3" type="audio/mpeg">
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+
+  <script>
+    // Control de música
+    const musicControl = document.getElementById('musicControl');
+    const backgroundMusic = document.getElementById('backgroundMusic');
+    let isPlaying = false;
+    
+    // Función para reproducir música
+    function toggleMusic() {
+      if (isPlaying) {
+        backgroundMusic.pause();
+        musicControl.innerHTML = '<i class="fas fa-music"></i>';
+      } else {
+        backgroundMusic.play().catch(e => console.log("La reproducción automática fue prevenida:", e));
+        musicControl.innerHTML = '<i class="fas fa-pause"></i>';
+      }
+      isPlaying = !isPlaying;
+    }
+    
+    // Evento para control de música
+    musicControl.addEventListener('click', toggleMusic);
+    
+    // Reproducir automáticamente al hacer clic en cualquier parte de la página
+    document.body.addEventListener('click', function initAudio() {
+      if (!isPlaying) {
+        backgroundMusic.play().then(() => {
+          isPlaying = true;
+          musicControl.innerHTML = '<i class="fas fa-pause"></i>';
+        }).catch(e => console.log("La reproducción automática fue prevenida:", e));
+        document.body.removeEventListener('click', initAudio);
+      }
+    });
+  </script>
+</body>
+</html>
